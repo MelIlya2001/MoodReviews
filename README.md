@@ -6,7 +6,7 @@
 - **Канатаев Тимофей Владимирович** [VK](https://vk.com/kanataev1) - написание телеграмм-бота и парсера отзывов.
 - **Лукьяненко Никита Александрович** [VK](https://vk.com/elindor) - составление датасета.
 
-[Telegram бот](https://t.me/Mood_reviews_bot)**
+[Telegram бот](https://t.me/Mood_reviews_bot)
 
 ---
 
