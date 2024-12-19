@@ -12,7 +12,6 @@ import requests
 import re
 from bs4 import BeautifulSoup
 from MODEL import analyze_reviews
-#service = Service('D:/chromedriver-win64/chromedriver-win64/chromedriver.exe')
 
 token = "8070577012:AAE5w6oHRC2eI9VoSKBHWnnN36fH5tQp7-8"
 chat_id = "-1002464195623"
@@ -33,9 +32,6 @@ from sklearn.ensemble import RandomForestClassifier
 
 import emoji
 import re
-#nltk.download('stopwords')
-#nltk.download('wordnet')
-#nltk.download('punkt')
 english_stopwords = set(stopwords.words('russian'))
 
 model = joblib.load('C:/Users/Kanat/OneDrive/Рабочий стол/unik/MoodReviews/rf_model.pkl')
@@ -55,43 +51,6 @@ def is_wildberries_review_link(url):
     )
     return re.match(pattern, url) is not None
 
-# def get_reviews(url):
-#     print("Начинаем извлечение отзывов с URL:", url)  # Отладочное сообщение
-#     # Инициализация веб-драйвера
-#     service = Service('C:/Users/Kanat/chromedriver-win64/chromedriver.exe')  # Укажите путь к вашему chromedriver
-#     driver = webdriver.Chrome(service=service)
-#
-#     try:
-#         # Открываем страницу с отзывами
-#         print("Открываем страницу...")
-#         driver.get(url)
-#
-#         # Даем время для загрузки контента
-#         print("Ожидание загрузки контента...")
-#         time.sleep(10)  # Увеличьте время, если контент загружается медленно
-#
-#         # Находим все элементы с отзывами
-#         print("Ищем элементы с отзывами...")
-#         reviews = driver.find_elements(By.CLASS_NAME, 'feedback__text--item')
-#
-#         # Проверяем, были ли найдены отзывы
-#         if not reviews:
-#             print("Отзывы не найдены. Проверьте класс элемента или URL.")
-#             return []
-#
-#         print(f"Найдено {len(reviews)} отзывов.")
-#
-#         # Извлекаем текст из каждого отзыва и сохраняем в список
-#         reviews_text = [review.text.strip() for review in reviews]
-#         print("Извлеченные отзывы:", reviews_text)  # Отладочное сообщение
-#
-#         return reviews_text
-#
-#     finally:
-#         # Закрываем драйвер
-#         print("Закрываем драйвер...")
-#         driver.quit() НЕ ТРОГАТЬ!
-# Функция для создания круговой диаграммы
 
 
 def create_bar_chart(positive, neutral, negative):
