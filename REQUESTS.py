@@ -27,17 +27,7 @@ def get_reviews(url, max_reviews=600, report_interval=10):
 
             # Удаляем каждый второй рейтинг
             ratings = [rating for index, rating in enumerate(ratings) if index % 2 == 0]
-
-            # Отладочные сообщения для рейтингов
-            # print("Рейтинги после удаления каждого второго:")
-            # for index, rating in enumerate(ratings):
-            #     rating_class = rating.get_attribute('class')  # Получаем класс элемента
-            #     print(f"Рейтинг {index + 1}: {rating_class}")
-
-            # Проверяем, совпадает ли количество отзывов и рейтингов
-            # if len(reviews) != len(ratings):
-            #     print(f"Количество отзывов ({len(reviews)}) не совпадает с количеством рейтингов ({len(ratings)}).")
-            #     break
+           
 
             for review, rating in zip(reviews, ratings):  # Используем zip для сопоставления
                 review_text = ""
@@ -109,8 +99,6 @@ def get_reviews(url, max_reviews=600, report_interval=10):
                 print(f"Собрано {len(reviews_data)} отзывов за {int(elapsed_time)} секунд.")
                 start_time = time.time()  # Сбрасываем таймер
 
-        # print(f"Собрано {len(reviews_data)} уникальных отзывов.")
-
         return reviews_data[:max_reviews]  # Возвращаем только первые max_reviews
 
     finally:
@@ -122,16 +110,3 @@ def save_reviews_to_csv(reviews_data, filename):
         writer = csv.DictWriter(file, fieldnames=['id', 'text', 'stars', 'mood'])
         writer.writeheader()
         writer.writerows(reviews_data)
-
-# # Пример использования функции
-# url = "https://www.wildberries.ru/catalog/175360455/feedbacks?imtId=172195665"
-#
-# reviews = get_reviews(url)
-#
-# # Сохраняем отзывы в CSV
-# csv_filename = 'C:/Users/Kanat/Desktop/reviews_camera.csv'
-# save_reviews_to_csv(reviews, csv_filename)
-#
-# # Выводим отзывы
-# for review in reviews[:40]:
-#     print(f"ID: {review['id']}, Отзыв: {review['text']}, Звезды: {review['stars']} \n")
