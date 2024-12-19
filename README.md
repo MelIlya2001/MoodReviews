@@ -1,7 +1,7 @@
 # 😊 MoodReviews
 **MoodReviews** - модель по распознаванию настроения покупателей по их отзывам на Wildberries
 
-- **[Telegram бот]((https://t.me/Mood_reviews_bot))**
+- **[Telegram бот](https://t.me/Mood_reviews_bot)**
 
 ---
 
